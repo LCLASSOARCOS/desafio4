@@ -1,0 +1,24 @@
+<div class="container text-center">
+  <h1 class="my-4">Lista de Productos</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    {{#each products}}
+    <div class="col-md-4 col-lg-3 mb-3">
+      <div class="text-center card" style="width: 16rem; height: 30rem;">
+        <div class="card-header">Categoría: {{this.category}}</div>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <div class="card-title h5">{{this.title}}</div>
+            <img src="{{this.thumbnail.[0]}}" class="thumbnail" alt="Thumbnail" style="width: 5rem">
+            <div class="mb-2 text-muted card-subtitle h6">Precio: ${{this.price}}</div>
+            <p class="card-text">{{this.description}}</p>
+          </div>
+          <div class="text-muted card-footer">Stock disponible: {{this.stock}} unidades</div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
